@@ -31,8 +31,14 @@ const Hero = () => {
             <a href='#projects' className='py-3 px-8 bg-[#0077B5] text-white font-semibold rounded-md hover:bg-[#006297] transition duration-300 text-center'>
               View Projects
             </a>
-            <a href='#resume-link' className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center'>
-              Download Resume
+            <a 
+              href="/resume.pdf" 
+              download="Prince_Saini_Resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center'
+            >
+             Download Resume
             </a>
           </div>
         </div>
