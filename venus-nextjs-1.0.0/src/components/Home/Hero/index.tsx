@@ -31,44 +31,16 @@ const Hero = () => {
               View Projects
             </a>
             
-            {/* Force Download Button */}
             <button
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.setAttribute('download', 'Prince_Saini_Resume.pdf');
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
+                window.location.href = '/resume.pdf';
               }}
               className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center cursor-pointer'
             >
               Download Resume
             </button>
           </div>
-        </div><button
-  onClick={async () => {
-    try {
-      const response = await fetch('/resume.pdf');
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Prince_Saini_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Download failed", error);
-      // Fallback: Agar fetch fail ho to direct link khol do
-      window.open('/resume.pdf', '_blank');
-    }
-  }}
-  className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center cursor-pointer'
->
-  Download Resume
-</button>
+        </div>
 
         {/* Right Side: Image Only */}
         <div className="md:col-span-6 col-span-12 flex items-center justify-center relative">
