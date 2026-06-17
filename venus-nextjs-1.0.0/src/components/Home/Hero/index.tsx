@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    // Yahan direct 'bg-section' aur 'dark:bg-darklight' class laga di hai bina kisi condition ke
     <section className='relative min-h-screen md:min-h-[calc(100vh-70px)] flex items-center pt-24 pb-16 md:pb-24 bg-section dark:bg-darklight transition-colors duration-300'>
       <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 w-full'>
         
@@ -31,14 +30,21 @@ const Hero = () => {
             <a href='#projects' className='py-3 px-8 bg-[#0077B5] text-white font-semibold rounded-md hover:bg-[#006297] transition duration-300 text-center'>
               View Projects
             </a>
-            {/* Maine sirf niche wala part update kiya hai taaki direct download ho */}
-            <a 
-              href="/resume.pdf" 
-              download="Prince_Saini_Resume.pdf"
-              className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center'
+            
+            {/* Force Download Button */}
+            <button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume.pdf';
+                link.setAttribute('download', 'Prince_Saini_Resume.pdf');
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+              }}
+              className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center cursor-pointer'
             >
               Download Resume
-            </a>
+            </button>
           </div>
         </div>
 
