@@ -31,21 +31,16 @@ const Hero = () => {
               View Projects
             </a>
             
-            {/* Silent Download Button */}
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.setAttribute('download', 'Prince_Saini_Resume.pdf');
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-              }}
+            {/* Final Fix: Using 'a' tag with download attribute to bypass Next.js Router */}
+            <a 
+              href="/resume.pdf" 
+              download="Prince_Saini_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center cursor-pointer'
             >
               Download Resume
-            </button>
+            </a>
           </div>
         </div>
 
