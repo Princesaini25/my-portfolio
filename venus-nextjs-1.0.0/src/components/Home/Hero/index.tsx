@@ -31,7 +31,6 @@ const Hero = () => {
             <a href='#projects' className='py-3 px-8 bg-[#0077B5] text-white font-semibold rounded-md hover:bg-[#006297] transition duration-300 text-center'>
               View Projects
             </a>
-            {/* Maine sirf niche wala part update kiya hai taaki direct download ho */}
             <a 
               href="/resume.pdf" 
               download="Prince_Saini_Resume.pdf"
