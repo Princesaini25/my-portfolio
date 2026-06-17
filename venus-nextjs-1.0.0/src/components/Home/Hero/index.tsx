@@ -33,18 +33,15 @@ const Hero = () => {
             
             {/* Force Download Button */}
             <button
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/resume.pdf';
-                link.setAttribute('download', 'Prince_Saini_Resume.pdf');
-                document.body.appendChild(link);
-                link.click();
-                link.remove();
-              }}
-              className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center cursor-pointer'
-            >
-              Download Resume
-            </button>
+  onClick={() => {
+    // Ye method browser ko file download karne ka instruction deta hai 
+    // bina kisi extra request ke
+    window.location.href = '/resume.pdf';
+  }}
+  className='py-3 px-8 bg-transparent text-[#0077B5] border-2 border-[#0077B5] font-semibold rounded-md hover:bg-[#E0F2FE] dark:hover:bg-slate-800 transition duration-300 text-center cursor-pointer'
+>
+  Download Resume
+</button>
           </div>
         </div>
 
@@ -65,4 +62,4 @@ const Hero = () => {
   )
 }
 
-export default Her
+export default Hero
