@@ -21,7 +21,7 @@ const page = () => {
         breadcrumbLinks={breadcrumbLinks}
       />
        <Counter isColorMode={true} />
-       <Progresswork isColorMode={true} />
+       <Progresswork />
     </>
   );
 };
