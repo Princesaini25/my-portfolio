@@ -10,7 +10,7 @@ const tools = [
   { name: 'NumPy', src: '/images/svgs/numpy.png' },
   { name: 'Pandas', src: '/images/svgs/pandas.png' },
   { name: 'Matplotlib', src: '/images/svgs/matplotlib.png' },
-  { name: 'Seaborn', src: '/images/svgs/Seaborn.png' },
+  { name: 'seaborn', src: '/images/svgs/seaborn.png' },
   { name: 'Git', src: '/images/svgs/Git.png' },
   { name: 'GitHub', src: '/images/svgs/Github.png' },
 ];
