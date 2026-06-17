@@ -1,49 +1,40 @@
 "use client";
-import Image from "next/image";
-import nextImg from "/public/images/documentation/Categories=Nextjs.svg";
-import reactImg from "/public/images/documentation/Categories=React.svg";
-import tailwindImg from "/public/images/documentation/Categories=Tailwind.svg";
-import nextauthImg from "/public/images/documentation/nextauth.png";
-import typescriptImg from "/public/images/documentation/Categories=Typescript.svg";
-import axiosImg from "/public/images/documentation/axios.svg";
+
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
 import { DocNavigation } from "./DocNavigation";
 
 export const Introduction = () => {
   const [docNavbarOpen, setDocNavbarOpen] = useState(false);
+
   const PackageVersions = [
     {
       id: "1",
       packageName: "NextJs",
-      img: nextImg,
       version: "15.1.1",
     },
     {
       id: "2",
       packageName: "React",
-      img: reactImg,
       version: "19.0.0",
     },
     {
       id: "3",
       packageName: "Tailwindcss",
-      img: tailwindImg,
       version: "4.0.0",
     },
     {
       id: "4",
       packageName: "NextAuth",
-      img: nextauthImg,
       version: "4.24.11",
     },
     {
       id: "5",
       packageName: "Typescript",
-      img: typescriptImg,
       version: "5.6.3",
     },
   ];
+
   return (
     <>
       <div id="version" className="md:scroll-m-[130px] scroll-m-28">
@@ -55,47 +46,45 @@ export const Introduction = () => {
         )}
 
         <div className="flex item-center justify-between">
-          <h3 className=" text-black text-2xl mt-4 font-semibold mb-6 dark:text-white">
-            Pacakge Versions
+          <h3 className="text-black text-2xl mt-4 font-semibold mb-6 dark:text-white">
+            Package Versions
           </h3>
+
           <button onClick={() => setDocNavbarOpen(true)} className="p-0">
-            {" "}
             <Icon icon="gg:menu-right" className="text-3xl lg:hidden block" />
           </button>
         </div>
 
         <div className="w-full flex justify-between gap-0 lg:flex-nowrap flex-wrap p-6 rounded-md border border-border dark:border-dark_border">
-          {PackageVersions &&
-            PackageVersions.map((item) => {
-              return (
-                <div
-                  key={item.id}
-                  className="lg:w-1/5 md:w-full text-center lg:border-b-0 border-b lg:border-e lg:last:border-e-0 last:border-b-0 border-border dark:border-dark_border"
-                >
-                  <Image
-                    src={item.img}
-                    alt="npm-package"
-                    className=" mx-auto w-10 h-10 "
-                  />
-                  <h5 className="text-2xl font-bold mt-3.5 dark:text-white">{`v${item.version}`}</h5>
-                  <p className="text-base font-medium text-midnight_text dark:text-white/50">
-                    {item.packageName}
-                  </p>
-                </div>
-              );
-            })}
+          {PackageVersions.map((item) => (
+            <div
+              key={item.id}
+              className="lg:w-1/5 md:w-full text-center lg:border-b-0 border-b lg:border-e lg:last:border-e-0 last:border-b-0 border-border dark:border-dark_border py-4"
+            >
+              <div className="w-10 h-10 mx-auto rounded-full border border-border dark:border-dark_border"></div>
+
+              <h5 className="text-2xl font-bold mt-3.5 dark:text-white">
+                {`v${item.version}`}
+              </h5>
+
+              <p className="text-base font-medium text-midnight_text dark:text-white/50">
+                {item.packageName}
+              </p>
+            </div>
+          ))}
         </div>
+
         <div className="mt-5">
           <p className="text-base font-medium text-midnight_text dark:text-white/50">
             Venus Tailwind NextJs Template is built with Tailwindcss and Nextjs.
           </p>
+
           <p className="text-base font-medium text-midnight_text dark:text-white/50">
-            These theme is ready to use and you can totally customize as per
-            your requirement.
+            This theme is ready to use and can be customized as per your requirements.
           </p>
+
           <p className="text-base font-medium text-midnight_text dark:text-white/50">
-            For Customize, You should have knowledge of NextJs, ReactJs,
-            Tailwind and JSX to be able to modify these template.
+            Basic knowledge of Next.js, React, Tailwind CSS, and TypeScript is recommended for customization.
           </p>
         </div>
       </div>
@@ -109,6 +98,7 @@ export const Introduction = () => {
           <h2 className="text-lg font-bold text-midnight_text dark:text-white">
             Docs Menu
           </h2>
+
           <button
             onClick={() => setDocNavbarOpen(false)}
             aria-label="Close mobile menu"
@@ -131,6 +121,7 @@ export const Introduction = () => {
             </svg>
           </button>
         </div>
+
         <nav className="px-4">
           <DocNavigation />
         </nav>
