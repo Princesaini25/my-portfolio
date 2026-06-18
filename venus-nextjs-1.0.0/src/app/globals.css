@@ -102,17 +102,15 @@ html {
   }
 }
 @media (min-width: 1024px) and (max-width: 1366px) {
-  /* Ye laptop (14 inch) ki screen size range hai */
-  html {
-    font-size: 85%; /* Isse poori website ka text thoda chhota ho jayega */
-  }
-  
+  /* Ye poori website ko laptop screen ke liye 90% size par zoom out kar dega */
   body {
-    overflow-x: hidden; /* Scrollbar ki problem khatam */
+    zoom: 90%; 
   }
+}
 
-  /* Ye aapke containers ko laptop par thoda aur compact bana dega */
-  .container {
-    max-width: 90% !important;
+/* PC (24 inch) ke liye, zoom normal rahega */
+@media (min-width: 1367px) {
+  body {
+    zoom: 100%;
   }
 }
