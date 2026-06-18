@@ -101,3 +101,18 @@ html {
     transform: translateY(0) !important;
   }
 }
+@media (min-width: 1024px) and (max-width: 1366px) {
+  /* Ye laptop (14 inch) ki screen size range hai */
+  html {
+    font-size: 85%; /* Isse poori website ka text thoda chhota ho jayega */
+  }
+  
+  body {
+    overflow-x: hidden; /* Scrollbar ki problem khatam */
+  }
+
+  /* Ye aapke containers ko laptop par thoda aur compact bana dega */
+  .container {
+    max-width: 90% !important;
+  }
+}
