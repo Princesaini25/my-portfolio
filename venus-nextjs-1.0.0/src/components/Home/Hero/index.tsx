@@ -4,8 +4,7 @@ import Image from 'next/image'
 
 const Hero = () => {
   return (
-    // Yahan min-h-screen ki jagah min-h-[80vh] kiya hai taaki laptop screen par fitting sahi rahe
-    <section className='relative min-h-[80vh] md:min-h-[calc(100vh-70px)] flex items-center pt-16 pb-16 md:pt-24 md:pb-24 bg-section dark:bg-darklight transition-colors duration-300'>
+    <section className='relative min-h-screen md:min-h-[calc(100vh-70px)] flex items-center pt-24 pb-16 md:pb-24 bg-section dark:bg-darklight transition-colors duration-300'>
       <div className='container mx-auto max-w-6xl px-4 grid grid-cols-12 gap-4 relative z-10 w-full'>
         
         {/* Left Side: Text Section */}
@@ -15,11 +14,11 @@ const Hero = () => {
           data-aos-delay='200'
           data-aos-duration='1000'>
           
-          <h1 className='text-[#0F172A] dark:text-white font-extrabold text-5xl md:text-7xl md:leading-[1.1]'>
+          <h1 className='text-[#0F172A] dark:text-white font-extrabold text-6xl md:text-7xl md:leading-[1.1]'>
             Prince Saini
           </h1>
           
-          <h2 className='text-[#0077B5] text-2xl md:text-4xl font-extrabold uppercase tracking-wide'>
+          <h2 className='text-[#0077B5] text-3xl md:text-4xl font-extrabold uppercase tracking-wide'>
             Data Analyst
           </h2>
           
@@ -32,6 +31,7 @@ const Hero = () => {
               View Projects
             </a>
             
+            {/* Final Fix: Using 'a' tag with download attribute to bypass Next.js Router */}
             <a 
               href="/resume.pdf" 
               download="Prince_Saini_Resume.pdf"
@@ -45,14 +45,14 @@ const Hero = () => {
         </div>
 
         {/* Right Side: Image Only */}
-        <div className="md:col-span-6 col-span-12 flex items-center justify-center relative px-4 md:px-0">
+        <div className="md:col-span-6 col-span-12 flex items-center justify-center relative">
           <Image
             src={getImgPath('/images/hero/hero-image.jpg')}
             alt='hero-image'
             width={350}
             height={150}
             quality={100}
-            style={{ width: '100%', height: 'auto', maxWidth: '350px' }} // maxWidth add kiya taaki laptop pe image bahut badi na ho
+            style={{ width: '100%', height: 'auto' }}
             className="rounded-2xl" 
           />
         </div>
