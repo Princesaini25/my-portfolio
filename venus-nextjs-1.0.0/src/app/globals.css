@@ -101,16 +101,25 @@ html {
     transform: translateY(0) !important;
   }
 }
-@media (min-width: 1024px) and (max-width: 1366px) {
-  /* Ye poori website ko laptop screen ke liye 90% size par zoom out kar dega */
-  body {
-    zoom: 90%; 
+@layer base {
+  /* Isse PC par content bahut zyada wide nahi hoga aur center rahega */
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
-}
 
-/* PC (24 inch) ke liye, zoom normal rahega */
-@media (min-width: 1367px) {
-  body {
-    zoom: 100%;
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 960px; /* Laptop par content ko compact karega */
+    }
+  }
+
+  @media (min-width: 1367px) {
+    .container {
+      max-width: 1200px; /* PC par thoda aur phail jayega */
+    }
   }
 }
